@@ -2,7 +2,6 @@
 import torch
 import torch.nn as nn
 import numpy as np
-import argparse
 
 # 再帰的配列ダンプ(次元が分からなくても動作する)
 # reference: https://msyksphinz.hatenablog.com/entry/2018/03/24/040000
@@ -114,6 +113,7 @@ for key, param in model.state_dict().items(): #この文で、keyの中のparam(
     print("Displaying as C language style")
     print("const float", key_str, "=")
     recurse_dump(param_np)
+    print(";")
     key_str = "const float " + key_str + " = "
     f.write(key_str)
     f.write('\n')
