@@ -4,4 +4,4 @@ conv_p2c.pyを実行すると、model_sample.pthから変換されたnn_paramete
 model_sample.pthは全結合2層。  
 Conv2dレイヤー入りのCNNでも動作確認したが、どんなネットワークでも変換できることは保証できない。  
 参考：https://msyksphinz.hatenablog.com/entry/2018/03/24/040000
-参考元によると、パラメータの次元を問わず使えるはずである
+参考元によると、パラメータの次元を問わず使えるはずである。
