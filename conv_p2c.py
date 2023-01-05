@@ -83,8 +83,7 @@ class NeuralNet(nn.Module):
         return out
 
 # ############ pthから多次元配列を格納したtxtに変換 ############
-# templateフォルダにあるテンプレートファイルからtxtを生成する
-# pthに保存されたkey(層の名前)ごとに一つのファイルを作成するのがいいのかな
+# .cを生成する
 # Conv2dレイヤーありのネットワークでも動作確認済み
 model = NeuralNet(input_size, hidden_size, num_classes).to(device)
 
