@@ -144,6 +144,7 @@ for key, param in model.state_dict().items(): #この文で、keyの中のparam(
     print("Type:", type(param_np),"\t", "Dimension:", param_np.ndim, "\t", "Shape:", param_np.shape)
     print("Displaying as C language style")
     print("const float", key_str, "=")
+    recurse_dump(param_np)
     key_str = "const float " + key_str + " = "
     f.write(key_str)
     f.write('\n')
