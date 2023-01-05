@@ -11,7 +11,7 @@ def recurse_dump(array, dim=0):
             print(" ", end="")
         print("{", end="")
         for i in range(len(array)):
-            print("%3.5f" % array[i], "F ", sep='', end="") # 桁数はここでいじる
+            print(" %3.5f" % array[i], "F", sep='', end="") # 型はここでサフィックスを使用して定義。
             if i != len(array)-1:
                 print(",", end="")
         for tab in range(dim):
@@ -38,7 +38,7 @@ def recurse_dump_file(f, array, dim=0):
             print(" ", end="", file=f)
         print("{", end="", file=f)
         for i in range(len(array)):
-            print("%3.5f" % array[i], "F ", sep='', end="", file=f) # 桁数はここでいじる
+            print(" %3.5f" % array[i], "F", sep='', end="", file=f) # 型はここでサフィックスを使用して定義。
             if i != len(array)-1:
                 print(",", end="", file=f)
         for tab in range(dim):
@@ -57,7 +57,7 @@ def recurse_dump_file(f, array, dim=0):
                 print("", file=f)
         for tab in range(dim):
             print(" ", end="", file=f)
-        print(" }", end="", file=f)
+        print(" }",sep='', end="", file=f)
 
 # load to cpu
 device = torch.device('cpu')
