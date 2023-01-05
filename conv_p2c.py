@@ -55,7 +55,7 @@ def recurse_dump_file(f, array, dim=0):
             if i != len(array)-1:
                 print(",", file=f)
             else:
-                print("")
+                print("", file=f)
         for tab in range(dim):
             print(" ", end="", file=f)
         print(" }", end="", file=f)
@@ -105,7 +105,7 @@ for key, param in model.state_dict().items(): #この文で、keyの中のparam(
     print("Typecasting")
     param_np = param.numpy()
     key_str = str(key)
-    key_str = key_str.replace('.', '_') # weightとbiasをc言語のほうでネットワークレイヤーを定義する構造体のメンバにしておけばこの行はいらない。
+    key_str = key_str.replace('.', '_') # weightとbiasをレイヤーを定義するC言語の構造体のメンバになるように変更すればこの行はいらない。
     dim_str = ''
     for i in range(param_np.ndim):
         dim_str = dim_str + "[" + str(param_np.shape[i]) +"]"
