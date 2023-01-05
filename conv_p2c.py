@@ -60,36 +60,6 @@ def recurse_dump_file(f, array, dim=0):
             print(" ", end="", file=f)
         print(" }", end="", file=f)
 
-# def recurse_dump_file(f, array, dim=0):
-#     if array.ndim == 1:
-#         for tab in range(dim):
-#             f.write(" ")
-#         f.write("{")
-#         for i in range(len(array)):
-#             f.write("%10.20f " % array[i]) # 桁数はここでいじる
-#             if i != len(array)-1:
-#                 f.write(",")
-#         for tab in range(dim):
-#             f.write(" ")
-#         f.write("}")
-#     else:
-#         for tab in range(dim):
-#             f.writew(" ")
-#         f.write("{")
-#         f.write('\n')
-#         for i in range(len(array)):
-#             array_elem = array[i]
-#             recurse_dump(array_elem, dim+1)
-#             if i != len(array)-1:
-#                 f.write(",")
-#                 f.write('\n')
-#             else:
-#                 f.write("")
-#                 f.write('\n')
-#         for tab in range(dim):
-#             f.write(" ")
-#         f.write(" }")
-
 # load to cpu
 device = torch.device('cpu')
 
