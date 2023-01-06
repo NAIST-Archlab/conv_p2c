@@ -81,7 +81,7 @@ class NeuralNet(nn.Module):
         out = self.fc2(out)
         return out
 
-# ############ pthから多次元配列を格納したtxtに変換 ############
+# ############ pthに保存されたpytorch tensorからcの多次元配列に変換 ############
 # .cを生成する
 # Conv2dレイヤーありのネットワークでも動作確認済み
 model = NeuralNet(input_size, hidden_size, num_classes).to(device)
